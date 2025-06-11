@@ -1,27 +1,118 @@
-# UkuleleCode
+# 🎸 UkuleleCode
 
-A coding project for ukulele-related applications.
+**ウクレレ演奏支援Webアプリケーション**
 
-## Getting Started
+UkuleleCodeは、ウクレレ演奏者のためのコード進行学習・演奏支援ツールです。実際の楽曲で使用される人気のコード進行パターンと、リアルタイムの音声再生機能を提供します。
 
-This project is currently in development.
+## ✨ 主な機能
 
-## Installation
+### 🎵 豊富なコード進行パターン
+- **全12キー対応**: C, C#, D, D#, E, F, F#, G, G#, A, A#, B
+- **実際の楽曲で使用される進行**:
+  - カノン進行（パッヘルベルのカノン）
+  - 王道進行（J-POP定番）
+  - Let It Be進行（ビートルズ）
+  - 小室進行（90年代J-POP）
+  - ビートルズ進行
+  - アニソン進行
+  - ジャズ風進行
+  - その他15種類以上
 
-Clone the repository:
+### 🎸 充実したコードライブラリ
+- **80種類以上のコード運指**: 
+  - 基本コード（メジャー・マイナー）
+  - 7thコード（C7, Am7, Cmaj7など）
+  - Sus4/Sus2コード
+  - Add9コード
+  - 6thコード
+  - ディミニッシュ・オーギュメントコード
+  - スラッシュコード
+
+### 🔊 リアルタイム音声再生
+- **Web Audio API使用**: クリックでリアルなウクレレ音を再生
+- **4弦同時発音**: 実際のウクレレサウンドを再現
+- **視覚的フィードバック**: 音声再生時のアニメーション効果
+
+### 📱 レスポンシブデザイン
+- **PC・モバイル対応**: どのデバイスでも快適に使用可能
+- **洗練されたUI**: 美しいグラデーションとアニメーション
+- **直感的な操作**: シンプルで分かりやすいインターフェース
+
+## 🚀 使い方
+
+### オンラインで使用
+ブラウザで以下のファイルを開くだけで使用できます：
+```
+index.html
+```
+
+### ローカル環境での使用
 ```bash
-git clone <repository-url>
+git clone https://github.com/amidaMangrove/UkuleleCode.git
 cd UkuleleCode
 ```
 
-## Usage
+ブラウザで`index.html`を開いてご利用ください。
 
-Documentation and usage instructions will be added as the project develops.
+## 🎯 使用方法
 
-## Contributing
+1. **キー選択**: 演奏したいキーのボタンをクリック
+2. **セクション選択**: Aメロ、Bメロ、サビから選択
+3. **コード進行確認**: 表示されたパターンから好みの進行を選択
+4. **音声確認**: コードカードをクリックして実際の音を確認
+5. **演奏練習**: 運指（タブ譜）を見ながら練習
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+## 🛠️ 技術スタック
 
-## License
+- **HTML5**: セマンティックな構造
+- **CSS3**: モダンなデザインとアニメーション
+- **JavaScript (ES6+)**: インタラクティブな機能
+- **Web Audio API**: リアルタイム音声合成
 
-This project is open source and available under the [MIT License](LICENSE).
+## 🎼 対応コード進行
+
+### Aメロ・Bメロ・サビ別パターン
+各セクションに適した進行パターンを用意：
+
+- **カノン進行**: I-V-vi-IV（最も人気）
+- **王道進行**: I-V-vi-iii（J-POP定番）
+- **小室進行**: vi-IV-V-I（90年代ヒット曲）
+- **ツーファイブ**: ii-V-I（ジャズの基本）
+- **循環コード**: I-vi-ii-V（日本の伝統的進行）
+
+## 🎨 デザインハイライト
+
+- **グラデーション背景**: 美しい紫系グラデーション
+- **フローティングアニメーション**: コードカードの浮遊効果
+- **パルス効果**: 選択中キーの鼓動アニメーション
+- **スムーズトランジション**: 全ての要素に滑らかな遷移
+
+## 🔄 今後の展開
+
+- [ ] コード進行の保存・共有機能
+- [ ] メトロノーム機能
+- [ ] 楽曲検索機能
+- [ ] MIDI出力対応
+- [ ] コード進行の自動作成機能
+
+## 🤝 コントリビューション
+
+プロジェクトへの貢献を歓迎します！
+
+1. このリポジトリをフォーク
+2. フィーチャーブランチを作成 (`git checkout -b feature/AmazingFeature`)
+3. 変更をコミット (`git commit -m 'Add some AmazingFeature'`)
+4. ブランチにプッシュ (`git push origin feature/AmazingFeature`)
+5. プルリクエストを作成
+
+## 📄 ライセンス
+
+このプロジェクトはMITライセンスの下で公開されています。詳細は[LICENSE](LICENSE)ファイルをご確認ください。
+
+## 📞 サポート
+
+質問や提案がある場合は、[Issues](https://github.com/amidaMangrove/UkuleleCode/issues)でお気軽にご連絡ください。
+
+---
+
+**🎵 Happy Ukulele Playing! 🎵**
