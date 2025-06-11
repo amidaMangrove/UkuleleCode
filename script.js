@@ -2,19 +2,24 @@
 const chordProgressions = {
     'C': {
         verse: [
-            { name: 'パターン1', chords: ['C', 'Am', 'F', 'G'] },
-            { name: 'パターン2', chords: ['C', 'F', 'Am', 'G'] },
-            { name: 'パターン3', chords: ['Am', 'F', 'C', 'G'] }
+            { name: 'カノン進行', chords: ['C', 'G', 'Am', 'F'] },
+            { name: '王道進行', chords: ['C', 'G', 'Am', 'Em'] },
+            { name: 'Let It Be進行', chords: ['C', 'Am', 'F', 'G'] },
+            { name: 'スタンドバイミー', chords: ['C', 'Am', 'F', 'G'] },
+            { name: '小室進行', chords: ['Am', 'F', 'G', 'C'] }
         ],
         bridge: [
-            { name: 'パターン1', chords: ['Am', 'F', 'G', 'C'] },
-            { name: 'パターン2', chords: ['F', 'G', 'Am', 'Am'] },
-            { name: 'パターン3', chords: ['Dm', 'G', 'C', 'Am'] }
+            { name: 'ツーファイブ進行', chords: ['Dm', 'G', 'C', 'C'] },
+            { name: 'サブドミナント', chords: ['F', 'G', 'Am', 'Am'] },
+            { name: 'セカンダリー', chords: ['Am', 'D', 'F', 'G'] },
+            { name: 'クリシェ', chords: ['C', 'C/B', 'Am', 'F'] }
         ],
         chorus: [
-            { name: 'パターン1', chords: ['F', 'G', 'C', 'Am'] },
-            { name: 'パターン2', chords: ['C', 'G', 'Am', 'F'] },
-            { name: 'パターン3', chords: ['Am', 'F', 'G', 'C'] }
+            { name: '循環コード', chords: ['C', 'Am', 'Dm', 'G'] },
+            { name: 'ビートルズ進行', chords: ['C', 'F', 'G', 'Am'] },
+            { name: 'J-POP王道', chords: ['F', 'G', 'Em', 'Am'] },
+            { name: 'アニソン進行', chords: ['F', 'G', 'C', 'Am'] },
+            { name: 'ポップパンク', chords: ['C', 'G', 'F', 'F'] }
         ]
     },
     'C#': {
@@ -36,19 +41,24 @@ const chordProgressions = {
     },
     'D': {
         verse: [
-            { name: 'パターン1', chords: ['D', 'Bm', 'G', 'A'] },
-            { name: 'パターン2', chords: ['D', 'G', 'Bm', 'A'] },
-            { name: 'パターン3', chords: ['Bm', 'G', 'D', 'A'] }
+            { name: 'カノン進行', chords: ['D', 'A', 'Bm', 'G'] },
+            { name: '王道進行', chords: ['D', 'A', 'Bm', 'F#m'] },
+            { name: 'フォーク進行', chords: ['D', 'Bm', 'G', 'A'] },
+            { name: 'ブルース進行', chords: ['D', 'G', 'A', 'D'] },
+            { name: '小室進行', chords: ['Bm', 'G', 'A', 'D'] }
         ],
         bridge: [
-            { name: 'パターン1', chords: ['Bm', 'G', 'A', 'D'] },
-            { name: 'パターン2', chords: ['G', 'A', 'Bm', 'Bm'] },
-            { name: 'パターン3', chords: ['Em', 'A', 'D', 'Bm'] }
+            { name: 'ツーファイブ進行', chords: ['Em', 'A', 'D', 'D'] },
+            { name: 'サブドミナント', chords: ['G', 'A', 'Bm', 'Bm'] },
+            { name: 'セカンダリー', chords: ['Bm', 'E', 'G', 'A'] },
+            { name: 'クリシェ', chords: ['D', 'D/C#', 'Bm', 'G'] }
         ],
         chorus: [
-            { name: 'パターン1', chords: ['G', 'A', 'D', 'Bm'] },
-            { name: 'パターン2', chords: ['D', 'A', 'Bm', 'G'] },
-            { name: 'パターン3', chords: ['Bm', 'G', 'A', 'D'] }
+            { name: '循環コード', chords: ['D', 'Bm', 'Em', 'A'] },
+            { name: 'ビートルズ進行', chords: ['D', 'G', 'A', 'Bm'] },
+            { name: 'J-POP王道', chords: ['G', 'A', 'F#m', 'Bm'] },
+            { name: 'アニソン進行', chords: ['G', 'A', 'D', 'Bm'] },
+            { name: 'ロック進行', chords: ['D', 'A', 'G', 'G'] }
         ]
     },
     'D#': {
@@ -87,19 +97,24 @@ const chordProgressions = {
     },
     'F': {
         verse: [
-            { name: 'パターン1', chords: ['F', 'Dm', 'A#', 'C'] },
-            { name: 'パターン2', chords: ['F', 'A#', 'Dm', 'C'] },
-            { name: 'パターン3', chords: ['Dm', 'A#', 'F', 'C'] }
+            { name: 'カノン進行', chords: ['F', 'C', 'Dm', 'A#'] },
+            { name: '王道進行', chords: ['F', 'C', 'Dm', 'Am'] },
+            { name: 'フォーク進行', chords: ['F', 'Dm', 'A#', 'C'] },
+            { name: 'ブルース進行', chords: ['F', 'A#', 'C', 'F'] },
+            { name: '小室進行', chords: ['Dm', 'A#', 'C', 'F'] }
         ],
         bridge: [
-            { name: 'パターン1', chords: ['Dm', 'A#', 'C', 'F'] },
-            { name: 'パターン2', chords: ['A#', 'C', 'Dm', 'Dm'] },
-            { name: 'パターン3', chords: ['Gm', 'C', 'F', 'Dm'] }
+            { name: 'ツーファイブ進行', chords: ['Gm', 'C', 'F', 'F'] },
+            { name: 'サブドミナント', chords: ['A#', 'C', 'Dm', 'Dm'] },
+            { name: 'セカンダリー', chords: ['Dm', 'G', 'A#', 'C'] },
+            { name: 'クリシェ', chords: ['F', 'F/E', 'Dm', 'A#'] }
         ],
         chorus: [
-            { name: 'パターン1', chords: ['A#', 'C', 'F', 'Dm'] },
-            { name: 'パターン2', chords: ['F', 'C', 'Dm', 'A#'] },
-            { name: 'パターン3', chords: ['Dm', 'A#', 'C', 'F'] }
+            { name: '循環コード', chords: ['F', 'Dm', 'Gm', 'C'] },
+            { name: 'ビートルズ進行', chords: ['F', 'A#', 'C', 'Dm'] },
+            { name: 'J-POP王道', chords: ['A#', 'C', 'Am', 'Dm'] },
+            { name: 'アニソン進行', chords: ['A#', 'C', 'F', 'Dm'] },
+            { name: 'ロック進行', chords: ['F', 'C', 'A#', 'A#'] }
         ]
     },
     'F#': {
@@ -121,19 +136,24 @@ const chordProgressions = {
     },
     'G': {
         verse: [
-            { name: 'パターン1', chords: ['G', 'Em', 'C', 'D'] },
-            { name: 'パターン2', chords: ['G', 'C', 'Em', 'D'] },
-            { name: 'パターン3', chords: ['Em', 'C', 'G', 'D'] }
+            { name: 'カノン進行', chords: ['G', 'D', 'Em', 'C'] },
+            { name: '王道進行', chords: ['G', 'D', 'Em', 'Bm'] },
+            { name: 'Wonderwall', chords: ['G', 'D', 'C', 'C'] },
+            { name: 'フォーク進行', chords: ['G', 'Em', 'C', 'D'] },
+            { name: '小室進行', chords: ['Em', 'C', 'D', 'G'] }
         ],
         bridge: [
-            { name: 'パターン1', chords: ['Em', 'C', 'D', 'G'] },
-            { name: 'パターン2', chords: ['C', 'D', 'Em', 'Em'] },
-            { name: 'パターン3', chords: ['Am', 'D', 'G', 'Em'] }
+            { name: 'ツーファイブ進行', chords: ['Am', 'D', 'G', 'G'] },
+            { name: 'サブドミナント', chords: ['C', 'D', 'Em', 'Em'] },
+            { name: 'セカンダリー', chords: ['Em', 'A', 'C', 'D'] },
+            { name: 'クリシェ', chords: ['G', 'G/F#', 'Em', 'C'] }
         ],
         chorus: [
-            { name: 'パターン1', chords: ['C', 'D', 'G', 'Em'] },
-            { name: 'パターン2', chords: ['G', 'D', 'Em', 'C'] },
-            { name: 'パターン3', chords: ['Em', 'C', 'D', 'G'] }
+            { name: '循環コード', chords: ['G', 'Em', 'Am', 'D'] },
+            { name: 'ビートルズ進行', chords: ['G', 'C', 'D', 'Em'] },
+            { name: 'J-POP王道', chords: ['C', 'D', 'Bm', 'Em'] },
+            { name: 'アニソン進行', chords: ['C', 'D', 'G', 'Em'] },
+            { name: 'ロック進行', chords: ['G', 'D', 'C', 'C'] }
         ]
     },
     'G#': {
@@ -234,7 +254,13 @@ const chordFingerings = {
     'Fm': ['1013', 'G-C-E-A'],
     'F#m': ['2120', 'G-C-E-A'],
     'Gm': ['0231', 'G-C-E-A'],
-    'G#m': ['1342', 'G-C-E-A']
+    'G#m': ['1342', 'G-C-E-A'],
+    
+    // Additional slash chords and variations
+    'C/B': ['2003', 'G-C-E-A'],
+    'G/F#': ['2030', 'G-C-E-A'],
+    'D/C#': ['2020', 'G-C-E-A'],
+    'F/E': ['1010', 'G-C-E-A']
 };
 
 // 音声合成クラス

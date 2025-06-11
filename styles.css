@@ -16,6 +16,11 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 header {
@@ -41,6 +46,9 @@ main {
     padding: 40px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
 }
 
 .key-selector h2 {
@@ -163,6 +171,7 @@ main {
     flex-wrap: wrap;
     gap: 15px;
     margin-bottom: 15px;
+    justify-content: center;
 }
 
 .chord-card {
