@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+main {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.key-selector h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4a5568;
+    font-size: 1.8rem;
+}
+
+.key-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.key-button {
+    background: linear-gradient(145deg, #f7fafc, #edf2f7);
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4a5568;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.key-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(145deg, #e2e8f0, #cbd5e0);
+}
+
+.key-button:active {
+    transform: translateY(0);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.key-button.selected {
+    background: linear-gradient(145deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+}
+
+.chord-progressions {
+    margin-top: 40px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.chord-progressions h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4a5568;
+    font-size: 1.8rem;
+}
+
+.section-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.tab-button {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #4a5568;
+}
+
+.tab-button:hover {
+    background: #cbd5e0;
+    transform: translateY(-1px);
+}
+
+.tab-button.active {
+    background: linear-gradient(145deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.chord-section {
+    display: none;
+    animation: slideIn 0.4s ease-out;
+}
+
+.chord-section.active {
+    display: block;
+}
+
+.chord-pattern {
+    background: #f7fafc;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-left: 5px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.chord-pattern:hover {
+    transform: translateX(5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.chord-pattern h3 {
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.chord-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.chord-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    min-width: 120px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.chord-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: #667eea;
+}
+
+.chord-card:active {
+    transform: scale(0.95);
+}
+
+.chord-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+.chord-fingering {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #718096;
+    line-height: 1.2;
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    main {
+        padding: 25px;
+    }
+    
+    .key-buttons {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 10px;
+    }
+    
+    .key-button {
+        padding: 15px 10px;
+        font-size: 1rem;
+    }
+    
+    .section-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-button {
+        width: 150px;
+    }
+    
+    .chord-row {
+        justify-content: center;
+    }
+    
+    .chord-card {
+        min-width: 100px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .key-buttons {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .chord-card {
+        min-width: 80px;
+        padding: 10px;
+    }
+    
+    .chord-name {
+        font-size: 1.1rem;
+    }
+}

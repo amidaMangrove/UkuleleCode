@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UkuleleCode - ウクレレ演奏支援</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎸 UkuleleCode</h1>
+            <p>ウクレレ演奏支援アプリ</p>
+        </header>
+
+        <main>
+            <section class="key-selector">
+                <h2>演奏キーを選択</h2>
+                <div class="key-buttons">
+                    <!-- キー選択ボタンがここに動的に生成される -->
+                </div>
+            </section>
+
+            <section class="chord-progressions" id="chord-progressions" style="display: none;">
+                <h2>コード進行パターン</h2>
+                
+                <div class="section-tabs">
+                    <button class="tab-button active" data-section="verse">Aメロ</button>
+                    <button class="tab-button" data-section="bridge">Bメロ</button>
+                    <button class="tab-button" data-section="chorus">サビ</button>
+                </div>
+
+                <div class="chord-display">
+                    <div class="chord-section active" id="verse-section">
+                        <!-- Aメロのコード進行がここに表示される -->
+                    </div>
+                    <div class="chord-section" id="bridge-section">
+                        <!-- Bメロのコード進行がここに表示される -->
+                    </div>
+                    <div class="chord-section" id="chorus-section">
+                        <!-- サビのコード進行がここに表示される -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
