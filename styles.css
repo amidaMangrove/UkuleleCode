@@ -367,6 +367,220 @@ main::before {
     font-weight: 500;
 }
 
+/* 楽曲リストスタイル */
+.song-list-section {
+    margin-top: 60px;
+    animation: fadeIn 0.5s ease-in;
+    position: relative;
+    z-index: 1;
+}
+
+.song-list-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-primary);
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.song-list-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.current-progression {
+    background: var(--gradient-button);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 8px rgba(255, 107, 107, 0.2);
+}
+
+.filters {
+    display: flex;
+    gap: 12px;
+}
+
+.filter-select {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.filter-select:hover {
+    border-color: rgba(78, 205, 196, 0.3);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(78, 205, 196, 0.2);
+}
+
+.song-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.song-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.song-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-color);
+    border-radius: 0 2px 2px 0;
+}
+
+.song-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(78, 205, 196, 0.2);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.song-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+}
+
+.song-artist {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.song-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.song-genre {
+    background: rgba(78, 205, 196, 0.2);
+    color: var(--accent-color);
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.song-difficulty {
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.song-difficulty.初級 {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+}
+
+.song-difficulty.中級 {
+    background: rgba(255, 193, 7, 0.2);
+    color: #FFC107;
+}
+
+.song-difficulty.上級 {
+    background: rgba(244, 67, 54, 0.2);
+    color: #F44336;
+}
+
+.close-song-list {
+    display: block;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 16px 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-song-list:hover {
+    background: rgba(255, 107, 107, 0.1);
+    border-color: rgba(255, 107, 107, 0.3);
+    transform: translateY(-2px);
+}
+
+.close-song-list:active {
+    transform: translateY(0);
+}
+
+.song-list-button {
+    background: rgba(78, 205, 196, 0.1);
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    border-radius: 12px;
+    padding: 8px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.song-list-button:hover {
+    background: rgba(78, 205, 196, 0.2);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(78, 205, 196, 0.2);
+}
+
+.song-list-button:active {
+    transform: translateY(0);
+}
+
 /* アニメーション */
 @keyframes gradientShift {
     0%, 100% {
@@ -528,6 +742,21 @@ main::before {
     .chord-name {
         font-size: 1.2rem;
     }
+    
+    .song-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .song-list-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+    
+    .filters {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -586,6 +815,21 @@ main::before {
     
     .chord-fingering {
         font-size: 0.8rem;
+    }
+    
+    .song-list-button {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+    
+    .filters {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .filter-select {
+        min-width: auto;
+        font-size: 0.85rem;
     }
 }
 

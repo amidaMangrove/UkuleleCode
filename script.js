@@ -268,6 +268,130 @@ const chordProgressions = {
     }
 };
 
+// 楽曲データベース（コード進行パターン別）
+const songDatabase = {
+    'カノン進行': [
+        { title: 'パッヘルベルのカノン', artist: 'Johann Pachelbel', genre: 'クラシック', difficulty: '初級' },
+        { title: 'Don\'t Stop Believin\'', artist: 'Journey', genre: 'ロック', difficulty: '中級' },
+        { title: 'With or Without You', artist: 'U2', genre: 'ロック', difficulty: '中級' },
+        { title: 'Let It Be', artist: 'The Beatles', genre: 'ポップ', difficulty: '初級' },
+        { title: 'Someone Like You', artist: 'Adele', genre: 'バラード', difficulty: '初級' },
+        { title: 'Basket Case', artist: 'Green Day', genre: 'パンク', difficulty: '中級' },
+        { title: 'ひまわりの約束', artist: '秦基博', genre: 'J-POP', difficulty: '初級' },
+        { title: '糸', artist: '中島みゆき', genre: 'J-POP', difficulty: '初級' }
+    ],
+    '王道進行': [
+        { title: 'さくらんぼ', artist: '大塚愛', genre: 'J-POP', difficulty: '初級' },
+        { title: '津軽海峡冬景色', artist: '石川さゆり', genre: '演歌', difficulty: '中級' },
+        { title: 'Just The Way You Are', artist: 'Bruno Mars', genre: 'ポップ', difficulty: '中級' },
+        { title: '恋', artist: '星野源', genre: 'J-POP', difficulty: '初級' },
+        { title: 'Everything', artist: 'MISIA', genre: 'R&B', difficulty: '上級' },
+        { title: '3月9日', artist: 'レミオロメン', genre: 'J-POP', difficulty: '初級' },
+        { title: '未来予想図II', artist: 'DREAMS COME TRUE', genre: 'J-POP', difficulty: '中級' }
+    ],
+    'Let It Be進行': [
+        { title: 'Let It Be', artist: 'The Beatles', genre: 'ポップ', difficulty: '初級' },
+        { title: 'Hey Jude', artist: 'The Beatles', genre: 'ポップ', difficulty: '初級' },
+        { title: 'No Woman No Cry', artist: 'Bob Marley', genre: 'レゲエ', difficulty: '中級' },
+        { title: 'Stand By Me', artist: 'Ben E. King', genre: 'R&B', difficulty: '初級' },
+        { title: 'Take Me Home, Country Roads', artist: 'John Denver', genre: 'カントリー', difficulty: '初級' },
+        { title: '贈る言葉', artist: '海援隊', genre: 'フォーク', difficulty: '初級' }
+    ],
+    'スタンドバイミー': [
+        { title: 'Stand By Me', artist: 'Ben E. King', genre: 'R&B', difficulty: '初級' },
+        { title: 'Earth Angel', artist: 'The Penguins', genre: 'ドゥーワップ', difficulty: '初級' },
+        { title: 'Duke of Earl', artist: 'Gene Chandler', genre: 'R&B', difficulty: '初級' },
+        { title: '青春', artist: '毛皮のマリーズ', genre: 'J-POP', difficulty: '中級' }
+    ],
+    '小室進行': [
+        { title: 'CAN YOU CELEBRATE?', artist: '安室奈美恵', genre: 'J-POP', difficulty: '中級' },
+        { title: 'DEPARTURES', artist: 'globe', genre: 'J-POP', difficulty: '中級' },
+        { title: 'WOW WAR TONIGHT', artist: 'H Jungle with t', genre: 'J-POP', difficulty: '中級' },
+        { title: 'GET WILD', artist: 'TM NETWORK', genre: 'J-POP', difficulty: '上級' },
+        { title: 'LOVE LOVE LOVE', artist: 'DREAMS COME TRUE', genre: 'J-POP', difficulty: '中級' },
+        { title: 'My Revolution', artist: '渡辺美里', genre: 'J-POP', difficulty: '中級' }
+    ],
+    'フォーク進行': [
+        { title: '乾杯', artist: '長渕剛', genre: 'フォーク', difficulty: '初級' },
+        { title: '贈る言葉', artist: '海援隊', genre: 'フォーク', difficulty: '初級' },
+        { title: '心の旅', artist: 'チューリップ', genre: 'フォーク', difficulty: '初級' },
+        { title: 'Blowin\' in the Wind', artist: 'Bob Dylan', genre: 'フォーク', difficulty: '初級' },
+        { title: 'The Sound of Silence', artist: 'Simon & Garfunkel', genre: 'フォーク', difficulty: '中級' },
+        { title: '津軽海峡冬景色', artist: '石川さゆり', genre: '演歌', difficulty: '中級' }
+    ],
+    'ブルース進行': [
+        { title: 'Sweet Home Chicago', artist: 'Robert Johnson', genre: 'ブルース', difficulty: '中級' },
+        { title: 'Stormy Monday', artist: 'T-Bone Walker', genre: 'ブルース', difficulty: '上級' },
+        { title: 'Pride and Joy', artist: 'Stevie Ray Vaughan', genre: 'ブルース', difficulty: '上級' },
+        { title: 'Johnny B. Goode', artist: 'Chuck Berry', genre: 'ロックンロール', difficulty: '中級' },
+        { title: 'Hound Dog', artist: 'Elvis Presley', genre: 'ロックンロール', difficulty: '初級' }
+    ],
+    'ツーファイブ進行': [
+        { title: 'All The Things You Are', artist: 'Jerome Kern', genre: 'ジャズ', difficulty: '上級' },
+        { title: 'Autumn Leaves', artist: 'Joseph Kosma', genre: 'ジャズ', difficulty: '上級' },
+        { title: 'Fly Me to the Moon', artist: 'Frank Sinatra', genre: 'ジャズ', difficulty: '中級' },
+        { title: 'Girl from Ipanema', artist: 'Stan Getz', genre: 'ボサノバ', difficulty: '中級' },
+        { title: 'Take Five', artist: 'Dave Brubeck', genre: 'ジャズ', difficulty: '上級' }
+    ],
+    '循環コード': [
+        { title: '上を向いて歩こう', artist: '坂本九', genre: 'J-POP', difficulty: '初級' },
+        { title: '津軽海峡冬景色', artist: '石川さゆり', genre: '演歌', difficulty: '中級' },
+        { title: '涙そうそう', artist: '夏川りみ', genre: '沖縄', difficulty: '初級' },
+        { title: '花', artist: '中島らも', genre: 'フォーク', difficulty: '初級' },
+        { title: '心の旅', artist: 'チューリップ', genre: 'フォーク', difficulty: '初級' }
+    ],
+    'ビートルズ進行': [
+        { title: 'Yesterday', artist: 'The Beatles', genre: 'ポップ', difficulty: '中級' },
+        { title: 'Hey Jude', artist: 'The Beatles', genre: 'ポップ', difficulty: '初級' },
+        { title: 'Let It Be', artist: 'The Beatles', genre: 'ポップ', difficulty: '初級' },
+        { title: 'The Long and Winding Road', artist: 'The Beatles', genre: 'ポップ', difficulty: '中級' },
+        { title: 'Here Comes the Sun', artist: 'The Beatles', genre: 'ポップ', difficulty: '中級' }
+    ],
+    'J-POP王道': [
+        { title: 'チェリー', artist: 'スピッツ', genre: 'J-POP', difficulty: '初級' },
+        { title: '空も飛べるはず', artist: 'スピッツ', genre: 'J-POP', difficulty: '初級' },
+        { title: '世界に一つだけの花', artist: 'SMAP', genre: 'J-POP', difficulty: '初級' },
+        { title: '恋', artist: '星野源', genre: 'J-POP', difficulty: '初級' },
+        { title: '365日の紙飛行機', artist: 'AKB48', genre: 'J-POP', difficulty: '初級' },
+        { title: '愛をこめて花束を', artist: 'Superfly', genre: 'J-POP', difficulty: '中級' }
+    ],
+    'アニソン進行': [
+        { title: '残酷な天使のテーゼ', artist: '高橋洋子', genre: 'アニソン', difficulty: '中級' },
+        { title: 'ガッチャマンの歌', artist: '子門真人', genre: 'アニソン', difficulty: '初級' },
+        { title: 'タッチ', artist: '岩崎良美', genre: 'アニソン', difficulty: '初級' },
+        { title: '宇宙戦艦ヤマト', artist: 'ささきいさお', genre: 'アニソン', difficulty: '中級' },
+        { title: '紅蓮華', artist: 'LiSA', genre: 'アニソン', difficulty: '中級' },
+        { title: '炎', artist: 'LiSA', genre: 'アニソン', difficulty: '中級' }
+    ],
+    'ロック進行': [
+        { title: 'Wild Thing', artist: 'The Troggs', genre: 'ロック', difficulty: '初級' },
+        { title: 'Louie Louie', artist: 'The Kingsmen', genre: 'ロック', difficulty: '初級' },
+        { title: 'Wonderwall', artist: 'Oasis', genre: 'ロック', difficulty: '中級' },
+        { title: 'Zombie', artist: 'The Cranberries', genre: 'ロック', difficulty: '中級' },
+        { title: 'Brain Stew', artist: 'Green Day', genre: 'パンク', difficulty: '中級' }
+    ],
+    'Wonderwall': [
+        { title: 'Wonderwall', artist: 'Oasis', genre: 'ロック', difficulty: '中級' },
+        { title: 'Don\'t Look Back in Anger', artist: 'Oasis', genre: 'ロック', difficulty: '中級' },
+        { title: 'Champagne Supernova', artist: 'Oasis', genre: 'ロック', difficulty: '上級' },
+        { title: 'Live Forever', artist: 'Oasis', genre: 'ロック', difficulty: '中級' }
+    ],
+    'ジャズ風': [
+        { title: 'Fly Me to the Moon', artist: 'Frank Sinatra', genre: 'ジャズ', difficulty: '中級' },
+        { title: 'The Way You Look Tonight', artist: 'Frank Sinatra', genre: 'ジャズ', difficulty: '上級' },
+        { title: 'Summertime', artist: 'George Gershwin', genre: 'ジャズ', difficulty: '上級' },
+        { title: 'Blue Moon', artist: 'Billie Holiday', genre: 'ジャズ', difficulty: '中級' },
+        { title: 'All of Me', artist: 'John Legend', genre: 'ポップ', difficulty: '中級' }
+    ],
+    'モダン': [
+        { title: 'Someone Like You', artist: 'Adele', genre: 'バラード', difficulty: '初級' },
+        { title: 'All of Me', artist: 'John Legend', genre: 'ポップ', difficulty: '中級' },
+        { title: 'Perfect', artist: 'Ed Sheeran', genre: 'ポップ', difficulty: '中級' },
+        { title: 'Thinking Out Loud', artist: 'Ed Sheeran', genre: 'ポップ', difficulty: '中級' },
+        { title: 'Stay', artist: 'Rihanna', genre: 'ポップ', difficulty: '初級' }
+    ]
+};
+
 // ウクレレコードの運指データ
 const chordFingerings = {
     // Major chords
@@ -475,12 +599,15 @@ class UkuleleApp {
         this.selectedKey = null;
         this.currentSection = 'verse';
         this.audioSynth = new AudioSynthesizer();
+        this.currentSongs = [];
+        this.currentProgression = '';
         this.init();
     }
 
     init() {
         this.createKeyButtons();
         this.setupEventListeners();
+        this.setupSongListControls();
     }
 
     createKeyButtons() {
@@ -504,6 +631,40 @@ class UkuleleApp {
                 const section = e.target.dataset.section;
                 this.switchSection(section);
             });
+        });
+    }
+
+    setupSongListControls() {
+        // ジャンルフィルターの初期化
+        this.initializeGenreFilter();
+        
+        // フィルターのイベントリスナー
+        document.getElementById('genre-filter').addEventListener('change', () => {
+            this.filterSongs();
+        });
+        
+        document.getElementById('difficulty-filter').addEventListener('change', () => {
+            this.filterSongs();
+        });
+        
+        // 楽曲リストを閉じるボタン
+        document.getElementById('close-song-list').addEventListener('click', () => {
+            this.closeSongList();
+        });
+    }
+
+    initializeGenreFilter() {
+        const allGenres = new Set();
+        Object.values(songDatabase).forEach(songs => {
+            songs.forEach(song => allGenres.add(song.genre));
+        });
+        
+        const genreFilter = document.getElementById('genre-filter');
+        Array.from(allGenres).sort().forEach(genre => {
+            const option = document.createElement('option');
+            option.value = genre;
+            option.textContent = genre;
+            genreFilter.appendChild(option);
         });
     }
 
@@ -590,7 +751,28 @@ class UkuleleApp {
             
             const title = document.createElement('h3');
             title.textContent = progression.name;
+            title.style.cursor = 'pointer';
+            title.onclick = () => this.showSongList(progression.name);
             patternDiv.appendChild(title);
+
+            // 楽曲リストボタンを追加
+            const songListButton = document.createElement('button');
+            songListButton.className = 'song-list-button';
+            songListButton.innerHTML = '🎵 楽曲を見る';
+            songListButton.onclick = (e) => {
+                e.stopPropagation();
+                this.showSongList(progression.name);
+            };
+            
+            const titleRow = document.createElement('div');
+            titleRow.style.display = 'flex';
+            titleRow.style.justifyContent = 'space-between';
+            titleRow.style.alignItems = 'center';
+            titleRow.style.marginBottom = '16px';
+            
+            titleRow.appendChild(title);
+            titleRow.appendChild(songListButton);
+            patternDiv.appendChild(titleRow);
 
             const chordRow = document.createElement('div');
             chordRow.className = 'chord-row';
@@ -629,6 +811,104 @@ class UkuleleApp {
         card.appendChild(fingering);
 
         return card;
+    }
+
+    showSongList(progressionName) {
+        this.currentProgression = progressionName;
+        this.currentSongs = songDatabase[progressionName] || [];
+        
+        // 進行名を表示
+        document.getElementById('current-progression-name').textContent = progressionName;
+        
+        // フィルターをリセット
+        document.getElementById('genre-filter').value = 'all';
+        document.getElementById('difficulty-filter').value = 'all';
+        
+        // 楽曲を表示
+        this.displaySongs(this.currentSongs);
+        
+        // 楽曲リストセクションを表示
+        const songListSection = document.getElementById('song-list-section');
+        songListSection.style.display = 'block';
+        
+        // スムーズスクロール
+        setTimeout(() => {
+            songListSection.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }, 100);
+    }
+
+    displaySongs(songs) {
+        const songGrid = document.getElementById('song-grid');
+        songGrid.innerHTML = '';
+        
+        if (songs.length === 0) {
+            songGrid.innerHTML = '<p style="text-align: center; color: var(--text-secondary); grid-column: 1 / -1;">楽曲が見つかりませんでした。</p>';
+            return;
+        }
+        
+        songs.forEach((song, index) => {
+            const songCard = this.createSongCard(song);
+            
+            // アニメーション用の初期状態
+            songCard.style.opacity = '0';
+            songCard.style.transform = 'translateY(20px)';
+            
+            songGrid.appendChild(songCard);
+            
+            // 段階的表示アニメーション
+            setTimeout(() => {
+                songCard.style.transition = 'all 0.4s ease';
+                songCard.style.opacity = '1';
+                songCard.style.transform = 'translateY(0)';
+            }, index * 50);
+        });
+    }
+
+    createSongCard(song) {
+        const card = document.createElement('div');
+        card.className = 'song-card';
+        
+        card.innerHTML = `
+            <div class="song-title">${song.title}</div>
+            <div class="song-artist">${song.artist}</div>
+            <div class="song-details">
+                <span class="song-genre">${song.genre}</span>
+                <span class="song-difficulty ${song.difficulty}">${song.difficulty}</span>
+            </div>
+        `;
+        
+        return card;
+    }
+
+    filterSongs() {
+        const genreFilter = document.getElementById('genre-filter').value;
+        const difficultyFilter = document.getElementById('difficulty-filter').value;
+        
+        let filteredSongs = this.currentSongs;
+        
+        if (genreFilter !== 'all') {
+            filteredSongs = filteredSongs.filter(song => song.genre === genreFilter);
+        }
+        
+        if (difficultyFilter !== 'all') {
+            filteredSongs = filteredSongs.filter(song => song.difficulty === difficultyFilter);
+        }
+        
+        this.displaySongs(filteredSongs);
+    }
+
+    closeSongList() {
+        const songListSection = document.getElementById('song-list-section');
+        songListSection.style.display = 'none';
+        
+        // コード進行セクションにスクロール
+        document.getElementById('chord-progressions').scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
     }
 
     async playChord(chordName) {

@@ -42,6 +42,31 @@
                     </div>
                 </div>
             </section>
+
+            <!-- 楽曲リストセクション -->
+            <section class="song-list-section" id="song-list-section" style="display: none;">
+                <h2>🎵 この進行で弾ける楽曲</h2>
+                <div class="song-list-controls">
+                    <div class="current-progression">
+                        <span class="progression-name" id="current-progression-name"></span>
+                    </div>
+                    <div class="filters">
+                        <select id="genre-filter" class="filter-select">
+                            <option value="all">全ジャンル</option>
+                        </select>
+                        <select id="difficulty-filter" class="filter-select">
+                            <option value="all">全難易度</option>
+                            <option value="初級">初級</option>
+                            <option value="中級">中級</option>
+                            <option value="上級">上級</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="song-grid" id="song-grid">
+                    <!-- 楽曲カードがここに動的に生成される -->
+                </div>
+                <button class="close-song-list" id="close-song-list">✕ 閉じる</button>
+            </section>
         </main>
     </div>
 
