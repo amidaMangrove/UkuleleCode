@@ -224,6 +224,100 @@ main {
     }
 }
 
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes wiggle {
+    0%, 7% {
+        transform: rotateZ(0);
+    }
+    15% {
+        transform: rotateZ(-15deg);
+    }
+    20% {
+        transform: rotateZ(10deg);
+    }
+    25% {
+        transform: rotateZ(-10deg);
+    }
+    30% {
+        transform: rotateZ(6deg);
+    }
+    35% {
+        transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 5px 25px rgba(102, 126, 234, 0.4);
+    }
+}
+
+/* フローティングアニメーション */
+.chord-card {
+    animation: float 6s ease-in-out infinite;
+}
+
+.chord-card:nth-child(2n) {
+    animation-delay: -2s;
+}
+
+.chord-card:nth-child(3n) {
+    animation-delay: -4s;
+}
+
+/* ホバー時のパルスアニメーション */
+.key-button.selected {
+    animation: pulse 2s infinite;
+}
+
+/* タブボタンのアクティブ時ウィグルアニメーション */
+.tab-button.active {
+    animation: wiggle 0.5s ease-in-out;
+}
+
+/* パターンカードのホバー時グローアニメーション */
+.chord-pattern:hover {
+    animation: glow 1.5s ease-in-out infinite;
+}
+
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
     .container {

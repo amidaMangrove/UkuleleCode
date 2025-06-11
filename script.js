@@ -237,11 +237,95 @@ const chordFingerings = {
     'G#m': ['1342', 'G-C-E-A']
 };
 
+// 音声合成クラス
+class AudioSynthesizer {
+    constructor() {
+        this.audioContext = null;
+        this.initAudio();
+    }
+
+    async initAudio() {
+        try {
+            this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        } catch (error) {
+            console.log('Web Audio API not supported');
+        }
+    }
+
+    // 各弦の基本周波数（ウクレレのチューニング：G-C-E-A）
+    getStringFrequencies() {
+        return {
+            'G': 392.00,  // G4
+            'C': 261.63,  // C4  
+            'E': 329.63,  // E4
+            'A': 440.00   // A4
+        };
+    }
+
+    // フレット番号から周波数を計算
+    fretToFrequency(baseFreq, fret) {
+        return baseFreq * Math.pow(2, fret / 12);
+    }
+
+    // コード音を再生
+    async playChord(chordName) {
+        if (!this.audioContext) {
+            await this.initAudio();
+        }
+
+        if (!this.audioContext) return;
+
+        // AudioContextの状態確認
+        if (this.audioContext.state === 'suspended') {
+            await this.audioContext.resume();
+        }
+
+        const fingering = chordFingerings[chordName];
+        if (!fingering) return;
+
+        const frets = fingering[0].split('').map(f => parseInt(f));
+        const strings = ['G', 'C', 'E', 'A'];
+        const baseFreqs = this.getStringFrequencies();
+
+        // 各弦の音を同時再生
+        strings.forEach((string, index) => {
+            const fret = frets[index];
+            const frequency = this.fretToFrequency(baseFreqs[string], fret);
+            this.playNote(frequency, 0.8, index * 0.05); // 少しずつ遅延させて自然な音に
+        });
+    }
+
+    // 単一の音を再生
+    playNote(frequency, duration, delay = 0) {
+        const gainNode = this.audioContext.createGain();
+        const oscillator = this.audioContext.createOscillator();
+
+        // オシレーターの設定
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(frequency, this.audioContext.currentTime + delay);
+
+        // エンベロープ（音の変化）設定
+        gainNode.gain.setValueAtTime(0, this.audioContext.currentTime + delay);
+        gainNode.gain.linearRampToValueAtTime(0.3, this.audioContext.currentTime + delay + 0.01);
+        gainNode.gain.exponentialRampToValueAtTime(0.1, this.audioContext.currentTime + delay + 0.3);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, this.audioContext.currentTime + delay + duration);
+
+        // 接続
+        oscillator.connect(gainNode);
+        gainNode.connect(this.audioContext.destination);
+
+        // 再生開始・停止
+        oscillator.start(this.audioContext.currentTime + delay);
+        oscillator.stop(this.audioContext.currentTime + delay + duration);
+    }
+}
+
 // アプリケーションクラス
 class UkuleleApp {
     constructor() {
         this.selectedKey = null;
         this.currentSection = 'verse';
+        this.audioSynth = new AudioSynthesizer();
         this.init();
     }
 
@@ -278,10 +362,18 @@ class UkuleleApp {
         // 前の選択をクリア
         document.querySelectorAll('.key-button').forEach(btn => {
             btn.classList.remove('selected');
+            btn.style.transform = '';
         });
 
         // 新しい選択をハイライト
-        document.querySelector(`[data-key="${key}"]`).classList.add('selected');
+        const selectedButton = document.querySelector(`[data-key="${key}"]`);
+        selectedButton.classList.add('selected');
+        
+        // 選択アニメーション
+        selectedButton.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+            selectedButton.style.transform = '';
+        }, 200);
         
         this.selectedKey = key;
         this.showChordProgressions();
@@ -297,7 +389,25 @@ class UkuleleApp {
             block: 'start'
         });
 
-        this.updateChordDisplay();
+        // 段階的な表示アニメーション
+        setTimeout(() => {
+            this.updateChordDisplay();
+            this.animateChordCardsEntry();
+        }, 300);
+    }
+
+    animateChordCardsEntry() {
+        const chordCards = document.querySelectorAll('.chord-card');
+        chordCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px) scale(0.8)';
+            
+            setTimeout(() => {
+                card.style.transition = 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0) scale(1)';
+            }, index * 100);
+        });
     }
 
     switchSection(section) {
@@ -372,18 +482,20 @@ class UkuleleApp {
         return card;
     }
 
-    playChord(chordName) {
-        // 音声再生機能（後で実装）
-        console.log(`Playing chord: ${chordName}`);
+    async playChord(chordName) {
+        // 音声再生
+        await this.audioSynth.playChord(chordName);
         
         // 視覚的フィードバック
         const chordCards = document.querySelectorAll('.chord-card');
         chordCards.forEach(card => {
             if (card.querySelector('.chord-name').textContent === chordName) {
                 card.style.transform = 'scale(0.95)';
+                card.style.boxShadow = '0 0 20px rgba(102, 126, 234, 0.6)';
                 setTimeout(() => {
                     card.style.transform = '';
-                }, 150);
+                    card.style.boxShadow = '';
+                }, 300);
             }
         });
     }
